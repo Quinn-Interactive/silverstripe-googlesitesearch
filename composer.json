@@ -10,7 +10,7 @@
 		"email": "will.rossiter@dna.co.nz"
 	}],
 	"require": {
-		"silverstripe/framework": ">=3.1"
+		"silverstripe/framework": "~2.4"
 	},
 	"extra": {
 		"installer-name": "googlesitesearch"
