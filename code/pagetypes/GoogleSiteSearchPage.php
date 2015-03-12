@@ -75,7 +75,7 @@ class GoogleSiteSearchPage_Controller extends Page_Controller {
 		Requirements::css('googlesitesearch/css/googlesitesearch.css');
 
 		if(isset($_GET['Search'])) {
-			$this->GoogleSiteSearchText = DBField::create_field(
+			$this->GoogleSiteSearchText = DBField::create(
 				'HTMLText', 
 				$_GET['Search']
 			);
