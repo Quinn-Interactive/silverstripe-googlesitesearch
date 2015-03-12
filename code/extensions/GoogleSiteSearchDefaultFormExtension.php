@@ -13,7 +13,7 @@ class GoogleSiteSearchDefaultFormExtension extends DataExtension {
 	 * @return Form
 	 */
 	public function getGoogleSiteSearchForm() {
-		if($page = GoogleSiteSearchPage::get()->first()) {
+		if($page = DataObject::get_one('GoogleSiteSearchPage')) {
 			$form = new Form(
 				$this, 
 				'GoogleSiteSearchForm', 

@@ -28,7 +28,7 @@ class GoogleSiteSearchPage extends Page {
 	
 	public function requireDefaultRecords() {
 		if(self::$create_default_search_page) {
-			if(GoogleSiteSearchPage::get()->count() < 1) {
+			if (!DataObject::get('GoogleSiteSearchPage')) {
 				$search = new GoogleSiteSearchPage();
 				$search->Title = "Search results";
 				$search->MenuTitle = "Search";
