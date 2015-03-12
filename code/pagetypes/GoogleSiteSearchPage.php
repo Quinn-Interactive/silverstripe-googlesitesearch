@@ -10,6 +10,9 @@ class GoogleSiteSearchPage extends Page {
 		'GoogleCX' => 'Varchar(200)',
 		'GoogleDomain' => 'Varchar(255)'
 	);
+	public static $create_default_search_page = true;
+	public static $cse_key = '';
+	public static $cse_cx = '';
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
@@ -24,14 +27,14 @@ class GoogleSiteSearchPage extends Page {
 	}
 	
 	public function requireDefaultRecords() {
-		if($this->config()->get('create_default_search_page')) {
+		if(self::$create_default_search_page) {
 			if(GoogleSiteSearchPage::get()->count() < 1) {
 				$search = new GoogleSiteSearchPage();
 				$search->Title = "Search results";
 				$search->MenuTitle = "Search";
 				$search->ShowInMenus = 0;
-				$search->GoogleKey = $this->config()->get('cse_key');
-				$search->GoogleCX = $this->config()->get('cse_cx');
+				$search->GoogleKey = self::$cse_key;
+				$search->GoogleCX = self::$cse_cx;
 				$search->URLSegment = "search";
 				$search->write();
 
@@ -45,8 +48,7 @@ class GoogleSiteSearchPage extends Page {
 	 */
 	public function getCseKey() {
 		if($this->GoogleKey) return $this->GoogleKey;
-
-		return $this->config()->get('cse_key');
+		return '';
 	}
 
 	/**
@@ -54,8 +56,7 @@ class GoogleSiteSearchPage extends Page {
 	 */
 	public function getCseCx() {
 		if($this->GoogleKey) return $this->GoogleCX;
-
-		return $this->config()->get('cse_cx');
+		return '';
 	}
 }
 
