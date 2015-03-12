@@ -17,8 +17,8 @@ class GoogleSiteSearchDefaultFormExtension extends DataObjectDecorator {
 			$form = new Form(
 				$this, 
 				'GoogleSiteSearchForm', 
-				new FieldList(new TextField('Search')),
-				new FieldList(new FormAction('doSearch'))
+				new FieldSet(new TextField('Search')),
+				new FieldSet(new FormAction('doSearch'))
 			);
 
 			$form->setFormMethod('GET');
