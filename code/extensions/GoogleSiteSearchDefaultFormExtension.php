@@ -3,7 +3,7 @@
 /**
  * @package googlesitesearch
  */
-class GoogleSiteSearchDefaultFormExtension extends DataExtension {
+class GoogleSiteSearchDefaultFormExtension extends DataObjectDecorator {
 	
 	/**
 	 * Return a form which sends the user to the first results page. If you want
