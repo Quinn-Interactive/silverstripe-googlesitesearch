@@ -17,7 +17,7 @@ class GoogleSiteSearchPage extends Page {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->addFieldsToTab('Root.Main', array(
+		$fields->addFieldsToTab('Root.Content.Main', array(
 			new TextField('GoogleKey', 'Google Custom Search Key (sign up at <a href="https://www.google.com/cse/sitesearch/create" target="_blank">google.com/cse</a>)'),
 			new TextField('GoogleCX', 'Google Custom Search CX'),
 			new TextField('GoogleDomain', 'Domain to search results for (must be public, i.e use live URL for testing)')
